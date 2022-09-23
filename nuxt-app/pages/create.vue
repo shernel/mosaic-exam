@@ -62,8 +62,8 @@
         </div>
 
       <div class="text-right py-3">
-        <NuxtLink to="/" type="submit" class="inline-flex justify-center rounded-md border border-indigo-600 text-indigo-600 py-2 px-4 text-sm font-medium shadow-sm mr-1">Back</NuxtLink>
-        <a @click="createItem" type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm">Create</a>
+        <NuxtLink to="/" class="inline-flex justify-center rounded-md border border-indigo-600 text-indigo-600 py-2 px-4 text-sm font-medium shadow-sm mr-1">Back</NuxtLink>
+        <a @click="createItem" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm">Create</a>
       </div>
 
       </div>
@@ -74,6 +74,8 @@
 </NuxtLayout>
 </template>
 <script setup>
+  import { useCreateItems } from '@/composables/items.ts'
+
   const { data: products } = await useFetch('/api/products') // server/api/products.ts
 
   const cart = ref({

@@ -24,5 +24,7 @@
 </template>
 
 <script setup>
+  import {useFetchItems} from '@/composables/items.ts'
+  
   const transactions = useFetchItems();
 </script>
