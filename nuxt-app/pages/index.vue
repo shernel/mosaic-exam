@@ -12,9 +12,9 @@
         <h3 class="mt-4 text-sm text-gray-700">{{ product.name }}</h3>
         <p class="mt-1 text-lg font-medium text-gray-900">{{ product.price }}</p>
         <div class="mt-1 flex rounded-md shadow-sm">
-          <span @click="product.qty = product.qty>0? (product.qty-1): 0" class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-sm text-gray-500"> - </span>
+          <span @click="product.qty = product.qty>0? parseInt(product.qty || 0)-1 : 0" class="cursor-pointer inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-sm text-gray-500"> - </span>
           <input @keypress="isNumber" v-model="product.qty" class="block w-full flex-1 rounded-none border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm py-1 px-2 border" placeholder="0">
-          <span @click="product.qty = product.qty+1" class="inline-flex items-center rounded-r-md border border-l-0 border-gray-300 bg-gray-50 px-3 text-sm text-gray-500"> + </span>
+          <span @click="product.qty = (parseInt(product.qty) || 0)+1" class="cursor-pointer inline-flex items-center rounded-r-md border border-l-0 border-gray-300 bg-gray-50 px-3 text-sm text-gray-500"> + </span>
         </div>
       </a>
     </div>
